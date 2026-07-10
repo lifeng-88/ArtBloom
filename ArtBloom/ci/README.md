@@ -17,9 +17,9 @@
 
 ## 一、Apple 后台准备
 
-1. [Developer](https://developer.apple.com/account/) 注册 App ID：`com.artbloom.app`
+1. [Developer](https://developer.apple.com/account/) 注册 App ID：`com.glowpeach.mindSpark`
 2. 勾选所需 Capability（推送、In-App Purchase 等）
-3. [App Store Connect](https://appstoreconnect.apple.com/) 创建 App，Bundle ID 选 `com.artbloom.app`
+3. [App Store Connect](https://appstoreconnect.apple.com/) 创建 App，Bundle ID 选 `com.glowpeach.mindSpark`
 4. 创建 **App Store Connect API Key**（角色 **Admin** 或 **App Manager**），下载 `.p8`（仅一次）
 
 ---
@@ -81,6 +81,6 @@ Workflow 只负责上传构建。还需在 App Store Connect：
 | 现象 | 处理 |
 |------|------|
 | `no devices` | 确认 API Key 角色为 Admin/App Manager；重新 Run workflow |
-| `No profiles for 'com.artbloom.app'` | 确认 App ID 已注册、`APPLE_TEAM_ID` 正确 |
+| `No profiles for 'com.glowpeach.mindSpark'` | 确认 App ID 已注册、`APPLE_TEAM_ID` 正确 |
 | Build Number 重复 | 重新 Run（CI 自动取 Connect 最新 +1） |
-| Bundle ID 不匹配 | 工程须为 `com.artbloom.app` |
+| Bundle ID 不匹配 | 工程须为 `com.glowpeach.mindSpark` |

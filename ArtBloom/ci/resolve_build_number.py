@@ -14,7 +14,7 @@ from typing import Optional
 
 API_BASE = "https://api.appstoreconnect.apple.com/v1"
 VENV_READY_ENV = "ASC_API_VENV_READY"
-DEFAULT_BUNDLE_ID = "com.artbloom.app"
+DEFAULT_BUNDLE_ID = "com.glowpeach.mindSpark"
 
 
 def require_env(name: str) -> str:

@@ -7,7 +7,7 @@ set -euo pipefail
 H5_URL="${APP_H5_URL:-http://localhost:5173/}"
 CHANNEL="${APP_CHANNEL:-888886}"
 CFG_URL="${APP_CFG_URL:-https://raw.githubusercontent.com/wwqxs/TXDNF/refs/heads/main/888886.json}"
-BUNDLE_ID="${BUNDLE_ID:-com.artbloom.app}"
+BUNDLE_ID="${BUNDLE_ID:-com.glowpeach.mindSpark}"
 
 echo "Launching ${BUNDLE_ID}"
 echo "  APP_H5_URL=${H5_URL}"

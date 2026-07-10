@@ -15,7 +15,7 @@ CI_DEVICE_UDID = "00008110-001A001E3C9A00C1"
 CI_DEVICE_NAME = "GitHub Actions CI"
 API_BASE = "https://api.appstoreconnect.apple.com/v1"
 VENV_READY_ENV = "ASC_API_VENV_READY"
-DEFAULT_BUNDLE_ID = "com.artbloom.app"
+DEFAULT_BUNDLE_ID = "com.glowpeach.mindSpark"
 
 
 def require_env(name: str) -> str:

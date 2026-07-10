@@ -11,7 +11,7 @@ actor ArtBloomKeychainManager {
     private let service: String
 
     private init() {
-        service = Bundle.main.bundleIdentifier ?? "com.artbloom.app"
+        service = Bundle.main.bundleIdentifier ?? "com.glowpeach.mindSpark"
     }
 
     func save(key: String, value: String) throws {

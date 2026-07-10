@@ -22,7 +22,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.artbloom.app.recharge</string>
+			<string>com.glowpeach.mindSpark.recharge</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>app</string>
