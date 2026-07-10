@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>艺绽</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff5f8;
+      --card: rgba(255, 255, 255, 0.88);
+      --text: #4a2f35;
+      --muted: #8f6b73;
+      --accent: #c97b84;
+      --accent-soft: #f4c2c2;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background:
+        radial-gradient(circle at top right, #ffe4ec 0%, transparent 42%),
+        radial-gradient(circle at bottom left, #f7e8ff 0%, transparent 38%),
+        var(--bg);
+      color: var(--text);
+      padding: calc(24px + env(safe-area-inset-top)) 20px calc(24px + env(safe-area-inset-bottom));
+    }
+    .hero { text-align: center; margin-bottom: 24px; }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; }
+    p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(201, 123, 132, 0.18);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 30px rgba(201, 123, 132, 0.08);
+    }
+    .label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .value { font-size: 15px; font-weight: 600; word-break: break-all; }
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #c97b84, #a85f68);
+      margin-top: 8px;
+    }
+    #status { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="badge">ArtBloom H5</div>
+    <h1>艺绽创作空间</h1>
+    <p>Bridge 协议对齐 Ebruk C 面，支持 app_config 自动切换与 syncAppInfo 调用。</p>
+  </div>
+
+  <div class="card">
+    <div class="label">应用信息</div>
+    <div class="value" id="appInfo">加载中…</div>
+  </div>
+
+  <div class="card">
+    <div class="label">设备 ID</div>
+    <div class="value" id="deviceId">加载中…</div>
+  </div>
+
+  <button type="button" id="refreshBtn">刷新 Bridge 信息</button>
+  <div id="status"></div>
+
+  <script>
+    const pending = new Map();
+    let seq = 0;
+
+    window.__syncAppInfoResolve = function (requestId, payload) {
+      const entry = pending.get(requestId);
+      if (!entry) return;
+      pending.delete(requestId);
+      clearTimeout(entry.timer);
+      entry.resolve(payload);
+    };
+
+    function callNative(typeName, params = {}) {
+      return new Promise((resolve, reject) => {
+        const requestId = "req-" + (++seq) + "-" + Date.now();
+        const timer = setTimeout(() => {
+          pending.delete(requestId);
+          reject(new Error("timeout: " + typeName));
+        }, 12000);
+        pending.set(requestId, { resolve, reject, timer });
+        const message = { requestId, typeName, params };
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.syncAppInfo) {
+          window.webkit.messageHandlers.syncAppInfo.postMessage(message);
+        } else {
+          clearTimeout(timer);
+          pending.delete(requestId);
+          reject(new Error("bridge unavailable"));
+        }
+      });
+    }
+
+    async function refreshInfo() {
+      const status = document.getElementById("status");
+      status.textContent = "正在同步…";
+      try {
+        const app = await callNative("getAppInfo");
+        const device = await callNative("getDeviceId");
+        if (app.ok) {
+          const info = app.result || {};
+          const version = info.appVersion || info.version || "-";
+          document.getElementById("appInfo").textContent =
+            (info.appName || "ArtBloom") + " · v" + version + " · " + (info.channel || "-");
+        }
+        if (device.ok) {
+          document.getElementById("deviceId").textContent = device.result.deviceId || "-";
+        }
+        status.textContent = "Bridge 已连接";
+      } catch (error) {
+        status.textContent = "Bridge 不可用（请在 App WebView 中打开）";
+      }
+    }
+
+    async function notifyReady() {
+      try {
+        await callNative("Ready");
+      } catch (_) {}
+    }
+
+    document.getElementById("refreshBtn").addEventListener("click", refreshInfo);
+    refreshInfo().then(notifyReady);
+  </script>
+</body>
+</html>

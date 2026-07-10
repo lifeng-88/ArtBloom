@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* ArtBloomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* ArtBloomApp.swift */; };
+		A10000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000002 /* ContentView.swift */; };
+		A10000010000000000000003 /* ArtBloomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000003 /* ArtBloomTheme.swift */; };
+		A10000010000000000000004 /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000004 /* GlassPanel.swift */; };
+		A10000010000000000000005 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000005 /* SampleData.swift */; };
+		A10000010000000000000006 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000006 /* HomeView.swift */; };
+		A10000010000000000000007 /* WorkshopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000007 /* WorkshopView.swift */; };
+		A10000010000000000000008 /* StudioProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000008 /* StudioProfileView.swift */; };
+		A10000010000000000000009 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000009 /* DrawingCanvasView.swift */; };
+		A1000001000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000A /* Assets.xcassets */; };
+		A1000001000000000000000B /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000C /* L10n.swift */; };
+		A1000001000000000000000C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000D /* Localizable.xcstrings */; };
+		A1000001000000000000000D /* ArtworkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000E /* ArtworkStore.swift */; };
+		A1000001000000000000000E /* MSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000F /* MSToast.swift */; };
+		A1000001000000000000000F /* ArtworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000010 /* ArtworkDetailView.swift */; };
+		A10000010000000000000010 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000011 /* ImageLoader.swift */; };
+		A10000010000000000000011 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000013 /* AppLanguage.swift */; };
+		A1000001000000000000001A /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001C /* AppAppearance.swift */; };
+		A10000010000000000000019 /* StudioSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001B /* StudioSettingsView.swift */; };
+		A10000010000000000000014 /* CanvasMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* CanvasMedium.swift */; };
+		A10000010000000000000013 /* CanvasDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000015 /* CanvasDrawing.swift */; };
+		A10000010000000000000015 /* PhotoImportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000017 /* PhotoImportHelper.swift */; };
+		A10000010000000000000016 /* CanvasExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000018 /* CanvasExportView.swift */; };
+		A10000010000000000000017 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000019 /* PrivacyInfo.xcprivacy */; };
+		A10000010000000000000018 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001A /* CanvasViewModel.swift */; };
+		A1000001000000000000001B /* ArtBloomKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001D /* ArtBloomKeychainManager.swift */; };
+		A1000001000000000000001C /* ArtBloomDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001E /* ArtBloomDeviceManager.swift */; };
+		A1000001000000000000001D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001F /* LaunchScreen.storyboard */; };
+		A1000001000000000000001E /* MSColorSwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000020 /* MSColorSwatch.swift */; };
+		A1000001000000000000001F /* MSPreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000021 /* MSPreviewSheet.swift */; };
+		A10000010000000000000020 /* LegalDocuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000022 /* LegalDocuments.swift */; };
+		A10000010000000000000021 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000023 /* LegalDocumentView.swift */; };
+		A10000010000000000000027 /* ArtBloomBSideConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000028 /* ArtBloomBSideConfig.swift */; };
+		A10000010000000000000028 /* ArtBloomBSideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000029 /* ArtBloomBSideManager.swift */; };
+		A10000010000000000000029 /* ArtBloomBSideBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002A /* ArtBloomBSideBridge.swift */; };
+		A1000001000000000000002A /* ArtBloomBSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002B /* ArtBloomBSideView.swift */; };
+		A1000001000000000000002B /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002C /* index.html */; };
+		A1000001000000000000002C /* ArtBloomAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002D /* ArtBloomAppConfig.swift */; };
+		A1000001000000000000002D /* ArtBloomBSideJSONCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002E /* ArtBloomBSideJSONCache.swift */; };
+		A1000001000000000000002E /* ArtBloomBSidePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000002F /* ArtBloomBSidePageController.swift */; };
+		A1000001000000000000002F /* ArtBloomLaunchLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000030 /* ArtBloomLaunchLoadingView.swift */; };
+		A10000010000000000000031 /* ArtBloomAFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000031 /* ArtBloomAFManager.swift */; };
+		A10000010000000000000032 /* ArtBloomAFRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000032 /* ArtBloomAFRemoteConfig.swift */; };
+		A10000010000000000000033 /* ArtBloomAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000033 /* ArtBloomAppDelegate.swift */; };
+		A10000010000000000000034 /* ArtBloomBSideMediaCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000034 /* ArtBloomBSideMediaCache.swift */; };
+		A10000010000000000000035 /* ArtBloomBSideMediaCacheSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000035 /* ArtBloomBSideMediaCacheSchemeHandler.swift */; };
+		A10000010000000000000036 /* ArtBloomPaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000036 /* ArtBloomPaymentManager.swift */; };
+		A10000010000000000000037 /* ArtBloomPaymentCallbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000037 /* ArtBloomPaymentCallbackManager.swift */; };
+		A10000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift */; };
+		A10000010000000000000039 /* ArtBloomPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000039 /* ArtBloomPushManager.swift */; };
+		A1000001000000000000003A /* ArtBloomPushNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000003A /* ArtBloomPushNotificationDelegate.swift */; };
+		A1000001000000000000003B /* ArtBloomBSidePaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000003B /* ArtBloomBSidePaymentController.swift */; };
+		A1000001000000000000003C /* ArtBloomBSidePeachGenBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */; };
+		A10000010000000000000040 /* ArtBloomIncomingURLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */; };
+		AF0000030000000000000003 /* AppsFlyerLib-Static in Frameworks */ = {isa = PBXBuildFile; productRef = AF0000020000000000000002 /* AppsFlyerLib-Static */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000010000000000000001 /* ArtBloomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomApp.swift; sourceTree = "<group>"; };
+		A20000010000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000010000000000000003 /* ArtBloomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomTheme.swift; sourceTree = "<group>"; };
+		A20000010000000000000004 /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
+		A20000010000000000000005 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		A20000010000000000000006 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A20000010000000000000007 /* WorkshopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopView.swift; sourceTree = "<group>"; };
+		A20000010000000000000008 /* StudioProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioProfileView.swift; sourceTree = "<group>"; };
+		A20000010000000000000009 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
+		A2000001000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000001000000000000000B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000001000000000000003C /* ArtBloom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloom.entitlements; sourceTree = "<group>"; };
+		A2000001000000000000003D /* ArtBloomRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloomRelease.entitlements; sourceTree = "<group>"; };
+		A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePeachGenBootstrap.swift; sourceTree = "<group>"; };
+		A2000001000000000000000C /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		A2000001000000000000000D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A20000010000000000000012 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		A20000010000000000000013 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		A2000001000000000000001C /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		A2000001000000000000001B /* StudioSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioSettingsView.swift; sourceTree = "<group>"; };
+		A20000010000000000000015 /* CanvasDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasDrawing.swift; sourceTree = "<group>"; };
+		A20000010000000000000016 /* CanvasMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasMedium.swift; sourceTree = "<group>"; };
+		A20000010000000000000017 /* PhotoImportHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImportHelper.swift; sourceTree = "<group>"; };
+		A20000010000000000000018 /* CanvasExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasExportView.swift; sourceTree = "<group>"; };
+		A20000010000000000000019 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A2000001000000000000001A /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		A2000001000000000000001D /* ArtBloomKeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomKeychainManager.swift; sourceTree = "<group>"; };
+		A2000001000000000000001E /* ArtBloomDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomDeviceManager.swift; sourceTree = "<group>"; };
+		A2000001000000000000001F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A20000010000000000000020 /* MSColorSwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSColorSwatch.swift; sourceTree = "<group>"; };
+		A20000010000000000000021 /* MSPreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSPreviewSheet.swift; sourceTree = "<group>"; };
+		A20000010000000000000022 /* LegalDocuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocuments.swift; sourceTree = "<group>"; };
+		A20000010000000000000023 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
+		A20000010000000000000028 /* ArtBloomBSideConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideConfig.swift; sourceTree = "<group>"; };
+		A20000010000000000000029 /* ArtBloomBSideManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideManager.swift; sourceTree = "<group>"; };
+		A2000001000000000000002A /* ArtBloomBSideBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideBridge.swift; sourceTree = "<group>"; };
+		A2000001000000000000002B /* ArtBloomBSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideView.swift; sourceTree = "<group>"; };
+		A2000001000000000000002C /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = BSide/index.html; sourceTree = "<group>"; };
+		A2000001000000000000002D /* ArtBloomAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomAppConfig.swift; sourceTree = "<group>"; };
+		A2000001000000000000002E /* ArtBloomBSideJSONCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideJSONCache.swift; sourceTree = "<group>"; };
+		A2000001000000000000002F /* ArtBloomBSidePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePageController.swift; sourceTree = "<group>"; };
+		A20000010000000000000030 /* ArtBloomLaunchLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomLaunchLoadingView.swift; sourceTree = "<group>"; };
+		A20000010000000000000031 /* ArtBloomAFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomAFManager.swift; sourceTree = "<group>"; };
+		A20000010000000000000032 /* ArtBloomAFRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomAFRemoteConfig.swift; sourceTree = "<group>"; };
+		A20000010000000000000033 /* ArtBloomAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomAppDelegate.swift; sourceTree = "<group>"; };
+		A20000010000000000000034 /* ArtBloomBSideMediaCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideMediaCache.swift; sourceTree = "<group>"; };
+		A20000010000000000000035 /* ArtBloomBSideMediaCacheSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSideMediaCacheSchemeHandler.swift; sourceTree = "<group>"; };
+		A20000010000000000000036 /* ArtBloomPaymentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPaymentManager.swift; sourceTree = "<group>"; };
+		A20000010000000000000037 /* ArtBloomPaymentCallbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPaymentCallbackManager.swift; sourceTree = "<group>"; };
+		A20000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPaymentRedirectReturnURL.swift; sourceTree = "<group>"; };
+		A20000010000000000000039 /* ArtBloomPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPushManager.swift; sourceTree = "<group>"; };
+		A2000001000000000000003A /* ArtBloomPushNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPushNotificationDelegate.swift; sourceTree = "<group>"; };
+		A2000001000000000000003B /* ArtBloomBSidePaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePaymentController.swift; sourceTree = "<group>"; };
+		A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomIncomingURLRouter.swift; sourceTree = "<group>"; };
+		A2000001000000000000000E /* ArtworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkStore.swift; sourceTree = "<group>"; };
+		A2000001000000000000000F /* MSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSToast.swift; sourceTree = "<group>"; };
+		A20000010000000000000010 /* ArtworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailView.swift; sourceTree = "<group>"; };
+		A20000010000000000000011 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		A30000010000000000000001 /* ArtBloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtBloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF0000030000000000000003 /* AppsFlyerLib-Static in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A50000010000000000000002 /* ArtBloom */,
+				A50000010000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A50000010000000000000002 /* ArtBloom */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000001 /* ArtBloomApp.swift */,
+				A20000010000000000000033 /* ArtBloomAppDelegate.swift */,
+				A20000010000000000000002 /* ContentView.swift */,
+				A50000010000000000000004 /* Theme */,
+				A50000010000000000000005 /* Components */,
+				A50000010000000000000006 /* Models */,
+				A50000010000000000000009 /* Services */,
+				A50000010000000000000007 /* Views */,
+				A50000010000000000000008 /* Localization */,
+				A5000001000000000000000A /* Web */,
+				A2000001000000000000000A /* Assets.xcassets */,
+				A2000001000000000000001F /* LaunchScreen.storyboard */,
+				A2000001000000000000000B /* Info.plist */,
+				A2000001000000000000003C /* ArtBloom.entitlements */,
+				A2000001000000000000003D /* ArtBloomRelease.entitlements */,
+				A20000010000000000000019 /* PrivacyInfo.xcprivacy */,
+				A20000010000000000000012 /* InfoPlist.xcstrings */,
+			);
+			path = ArtBloom;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30000010000000000000001 /* ArtBloom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000004 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000003 /* ArtBloomTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000005 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000004 /* GlassPanel.swift */,
+				A20000010000000000000020 /* MSColorSwatch.swift */,
+				A20000010000000000000021 /* MSPreviewSheet.swift */,
+				A2000001000000000000000F /* MSToast.swift */,
+				A20000010000000000000011 /* ImageLoader.swift */,
+				A20000010000000000000015 /* CanvasDrawing.swift */,
+				A20000010000000000000017 /* PhotoImportHelper.swift */,
+				A20000010000000000000018 /* CanvasExportView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000005 /* SampleData.swift */,
+				A20000010000000000000016 /* CanvasMedium.swift */,
+				A2000001000000000000000E /* ArtworkStore.swift */,
+				A2000001000000000000001A /* CanvasViewModel.swift */,
+				A20000010000000000000022 /* LegalDocuments.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000006 /* HomeView.swift */,
+				A20000010000000000000007 /* WorkshopView.swift */,
+				A20000010000000000000008 /* StudioProfileView.swift */,
+				A20000010000000000000009 /* DrawingCanvasView.swift */,
+				A20000010000000000000010 /* ArtworkDetailView.swift */,
+				A2000001000000000000001B /* StudioSettingsView.swift */,
+				A20000010000000000000023 /* LegalDocumentView.swift */,
+				A2000001000000000000002B /* ArtBloomBSideView.swift */,
+				A20000010000000000000030 /* ArtBloomLaunchLoadingView.swift */,
+				A2000001000000000000003B /* ArtBloomBSidePaymentController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000008 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000000C /* L10n.swift */,
+				A20000010000000000000013 /* AppLanguage.swift */,
+				A2000001000000000000001C /* AppAppearance.swift */,
+				A2000001000000000000000D /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		A50000010000000000000009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000001D /* ArtBloomKeychainManager.swift */,
+				A2000001000000000000001E /* ArtBloomDeviceManager.swift */,
+				A20000010000000000000028 /* ArtBloomBSideConfig.swift */,
+				A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */,
+				A20000010000000000000029 /* ArtBloomBSideManager.swift */,
+				A2000001000000000000002A /* ArtBloomBSideBridge.swift */,
+				A2000001000000000000002D /* ArtBloomAppConfig.swift */,
+				A2000001000000000000002E /* ArtBloomBSideJSONCache.swift */,
+				A2000001000000000000002F /* ArtBloomBSidePageController.swift */,
+				A20000010000000000000031 /* ArtBloomAFManager.swift */,
+				A20000010000000000000032 /* ArtBloomAFRemoteConfig.swift */,
+				A20000010000000000000034 /* ArtBloomBSideMediaCache.swift */,
+				A20000010000000000000035 /* ArtBloomBSideMediaCacheSchemeHandler.swift */,
+				A20000010000000000000036 /* ArtBloomPaymentManager.swift */,
+				A20000010000000000000037 /* ArtBloomPaymentCallbackManager.swift */,
+				A20000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift */,
+				A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */,
+				A20000010000000000000039 /* ArtBloomPushManager.swift */,
+				A2000001000000000000003A /* ArtBloomPushNotificationDelegate.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A5000001000000000000000A /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000002C /* index.html */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A60000010000000000000001 /* ArtBloom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000010000000000000003 /* Build configuration list for PBXNativeTarget "ArtBloom" */;
+			buildPhases = (
+				A70000010000000000000001 /* Sources */,
+				A40000010000000000000001 /* Frameworks */,
+				A70000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArtBloom;
+			packageProductDependencies = (
+				AF0000020000000000000002 /* AppsFlyerLib-Static */,
+			);
+			productName = ArtBloom;
+			productReference = A30000010000000000000001 /* ArtBloom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A90000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A60000010000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A80000010000000000000001 /* Build configuration list for PBXProject "ArtBloom" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = A50000010000000000000001;
+			packageReferences = (
+				AF0000010000000000000001 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Static" */,
+			);
+			productRefGroup = A50000010000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A60000010000000000000001 /* ArtBloom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A70000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001000000000000000A /* Assets.xcassets in Resources */,
+				A1000001000000000000001D /* LaunchScreen.storyboard in Resources */,
+				A1000001000000000000000C /* Localizable.xcstrings in Resources */,
+				A10000010000000000000017 /* PrivacyInfo.xcprivacy in Resources */,
+				A1000001000000000000002B /* index.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000001 /* ArtBloomApp.swift in Sources */,
+				A10000010000000000000002 /* ContentView.swift in Sources */,
+				A10000010000000000000003 /* ArtBloomTheme.swift in Sources */,
+				A10000010000000000000004 /* GlassPanel.swift in Sources */,
+				A1000001000000000000001E /* MSColorSwatch.swift in Sources */,
+				A1000001000000000000001F /* MSPreviewSheet.swift in Sources */,
+				A10000010000000000000020 /* LegalDocuments.swift in Sources */,
+				A10000010000000000000021 /* LegalDocumentView.swift in Sources */,
+				A10000010000000000000005 /* SampleData.swift in Sources */,
+				A10000010000000000000006 /* HomeView.swift in Sources */,
+				A10000010000000000000007 /* WorkshopView.swift in Sources */,
+				A10000010000000000000008 /* StudioProfileView.swift in Sources */,
+				A10000010000000000000009 /* DrawingCanvasView.swift in Sources */,
+				A1000001000000000000000B /* L10n.swift in Sources */,
+				A1000001000000000000000D /* ArtworkStore.swift in Sources */,
+				A1000001000000000000000E /* MSToast.swift in Sources */,
+				A1000001000000000000000F /* ArtworkDetailView.swift in Sources */,
+				A10000010000000000000010 /* ImageLoader.swift in Sources */,
+				A10000010000000000000011 /* AppLanguage.swift in Sources */,
+				A1000001000000000000001A /* AppAppearance.swift in Sources */,
+				A10000010000000000000019 /* StudioSettingsView.swift in Sources */,
+				A10000010000000000000013 /* CanvasDrawing.swift in Sources */,
+				A10000010000000000000014 /* CanvasMedium.swift in Sources */,
+				A10000010000000000000015 /* PhotoImportHelper.swift in Sources */,
+				A10000010000000000000016 /* CanvasExportView.swift in Sources */,
+				A10000010000000000000018 /* CanvasViewModel.swift in Sources */,
+				A1000001000000000000001B /* ArtBloomKeychainManager.swift in Sources */,
+				A1000001000000000000001C /* ArtBloomDeviceManager.swift in Sources */,
+				A10000010000000000000027 /* ArtBloomBSideConfig.swift in Sources */,
+				A1000001000000000000003C /* ArtBloomBSidePeachGenBootstrap.swift in Sources */,
+				A10000010000000000000028 /* ArtBloomBSideManager.swift in Sources */,
+				A10000010000000000000029 /* ArtBloomBSideBridge.swift in Sources */,
+				A1000001000000000000002A /* ArtBloomBSideView.swift in Sources */,
+				A1000001000000000000002C /* ArtBloomAppConfig.swift in Sources */,
+				A1000001000000000000002D /* ArtBloomBSideJSONCache.swift in Sources */,
+				A1000001000000000000002E /* ArtBloomBSidePageController.swift in Sources */,
+				A1000001000000000000002F /* ArtBloomLaunchLoadingView.swift in Sources */,
+				A10000010000000000000031 /* ArtBloomAFManager.swift in Sources */,
+				A10000010000000000000032 /* ArtBloomAFRemoteConfig.swift in Sources */,
+				A10000010000000000000033 /* ArtBloomAppDelegate.swift in Sources */,
+				A10000010000000000000034 /* ArtBloomBSideMediaCache.swift in Sources */,
+				A10000010000000000000035 /* ArtBloomBSideMediaCacheSchemeHandler.swift in Sources */,
+				A10000010000000000000036 /* ArtBloomPaymentManager.swift in Sources */,
+				A10000010000000000000037 /* ArtBloomPaymentCallbackManager.swift in Sources */,
+				A10000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift in Sources */,
+				A10000010000000000000040 /* ArtBloomIncomingURLRouter.swift in Sources */,
+				A10000010000000000000039 /* ArtBloomPushManager.swift in Sources */,
+				A1000001000000000000003A /* ArtBloomPushNotificationDelegate.swift in Sources */,
+				A1000001000000000000003B /* ArtBloomBSidePaymentController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA0000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA0000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ArtBloom/ArtBloom.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArtBloom/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ArtBloom;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artbloom.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AA0000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ArtBloom/ArtBloomRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArtBloom/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ArtBloom;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artbloom.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80000010000000000000001 /* Build configuration list for PBXProject "ArtBloom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000010000000000000001 /* Debug */,
+				AA0000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000010000000000000003 /* Build configuration list for PBXNativeTarget "ArtBloom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000010000000000000003 /* Debug */,
+				AA0000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF0000010000000000000001 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Static" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF0000020000000000000002 /* AppsFlyerLib-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF0000010000000000000001 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Static" */;
+			productName = "AppsFlyerLib-Static";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A90000010000000000000001 /* Project object */;
+}
