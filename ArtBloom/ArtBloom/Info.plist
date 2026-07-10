@@ -2,47 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>images.unsplash.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<false/>
-				<key>NSExceptionRequiresForwardSecrecy</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>ArtBloom needs access to your photos to import images for drawing and style transformation.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>ArtBloom needs permission to save your creations to your photo library.</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>zh-Hant</string>
-		<string>zh-Hans</string>
-	</array>
+	<key>APIBaseURL</key>
+	<string>https://api.glowpeach.icu</string>
+	<key>ART_BLOOM_B_SIDE_URL</key>
+	<string>https://glowpeach.icu/h5/landing</string>
 	<key>AppChannel</key>
 	<string>IOS10071</string>
 	<key>AppsFlyerAppleAppID</key>
 	<string>id6789016347</string>
 	<key>AppsFlyerDevKey</key>
 	<string></string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>ArtBloom uses your device identifier to measure ad performance and improve your experience.</string>
-	<key>APIBaseURL</key>
-	<string>https://api.glowpeach.icu</string>
-	<key>ResBaseURL</key>
-	<string>https://res.glowpeach.icu</string>
-	<key>ART_BLOOM_B_SIDE_URL</key>
-	<string>https://glowpeach.icu/h5/landing</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>zh-Hant</string>
+		<string>zh-Hans</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -54,6 +29,25 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>images.unsplash.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>ResBaseURL</key>
+	<string>https://res.glowpeach.icu</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

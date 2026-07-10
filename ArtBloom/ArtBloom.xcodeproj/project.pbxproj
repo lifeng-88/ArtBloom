@@ -24,14 +24,14 @@
 		A1000001000000000000000F /* ArtworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000010 /* ArtworkDetailView.swift */; };
 		A10000010000000000000010 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000011 /* ImageLoader.swift */; };
 		A10000010000000000000011 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000013 /* AppLanguage.swift */; };
-		A1000001000000000000001A /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001C /* AppAppearance.swift */; };
-		A10000010000000000000019 /* StudioSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001B /* StudioSettingsView.swift */; };
-		A10000010000000000000014 /* CanvasMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* CanvasMedium.swift */; };
 		A10000010000000000000013 /* CanvasDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000015 /* CanvasDrawing.swift */; };
+		A10000010000000000000014 /* CanvasMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* CanvasMedium.swift */; };
 		A10000010000000000000015 /* PhotoImportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000017 /* PhotoImportHelper.swift */; };
 		A10000010000000000000016 /* CanvasExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000018 /* CanvasExportView.swift */; };
 		A10000010000000000000017 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000019 /* PrivacyInfo.xcprivacy */; };
 		A10000010000000000000018 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001A /* CanvasViewModel.swift */; };
+		A10000010000000000000019 /* StudioSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001B /* StudioSettingsView.swift */; };
+		A1000001000000000000001A /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001C /* AppAppearance.swift */; };
 		A1000001000000000000001B /* ArtBloomKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001D /* ArtBloomKeychainManager.swift */; };
 		A1000001000000000000001C /* ArtBloomDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001E /* ArtBloomDeviceManager.swift */; };
 		A1000001000000000000001D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001F /* LaunchScreen.storyboard */; };
@@ -76,21 +76,22 @@
 		A20000010000000000000009 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
 		A2000001000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2000001000000000000000B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2000001000000000000003C /* ArtBloom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloom.entitlements; sourceTree = "<group>"; };
-		A2000001000000000000003D /* ArtBloomRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloomRelease.entitlements; sourceTree = "<group>"; };
-		A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePeachGenBootstrap.swift; sourceTree = "<group>"; };
 		A2000001000000000000000C /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A2000001000000000000000D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A2000001000000000000000E /* ArtworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkStore.swift; sourceTree = "<group>"; };
+		A2000001000000000000000F /* MSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSToast.swift; sourceTree = "<group>"; };
+		A20000010000000000000010 /* ArtworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailView.swift; sourceTree = "<group>"; };
+		A20000010000000000000011 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A20000010000000000000012 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		A20000010000000000000013 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
-		A2000001000000000000001C /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
-		A2000001000000000000001B /* StudioSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioSettingsView.swift; sourceTree = "<group>"; };
 		A20000010000000000000015 /* CanvasDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasDrawing.swift; sourceTree = "<group>"; };
 		A20000010000000000000016 /* CanvasMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasMedium.swift; sourceTree = "<group>"; };
 		A20000010000000000000017 /* PhotoImportHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImportHelper.swift; sourceTree = "<group>"; };
 		A20000010000000000000018 /* CanvasExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasExportView.swift; sourceTree = "<group>"; };
 		A20000010000000000000019 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		A2000001000000000000001A /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		A2000001000000000000001B /* StudioSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioSettingsView.swift; sourceTree = "<group>"; };
+		A2000001000000000000001C /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		A2000001000000000000001D /* ArtBloomKeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomKeychainManager.swift; sourceTree = "<group>"; };
 		A2000001000000000000001E /* ArtBloomDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomDeviceManager.swift; sourceTree = "<group>"; };
 		A2000001000000000000001F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,11 +119,10 @@
 		A20000010000000000000039 /* ArtBloomPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPushManager.swift; sourceTree = "<group>"; };
 		A2000001000000000000003A /* ArtBloomPushNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomPushNotificationDelegate.swift; sourceTree = "<group>"; };
 		A2000001000000000000003B /* ArtBloomBSidePaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePaymentController.swift; sourceTree = "<group>"; };
+		A2000001000000000000003C /* ArtBloom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloom.entitlements; sourceTree = "<group>"; };
+		A2000001000000000000003D /* ArtBloomRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloomRelease.entitlements; sourceTree = "<group>"; };
+		A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePeachGenBootstrap.swift; sourceTree = "<group>"; };
 		A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomIncomingURLRouter.swift; sourceTree = "<group>"; };
-		A2000001000000000000000E /* ArtworkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkStore.swift; sourceTree = "<group>"; };
-		A2000001000000000000000F /* MSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSToast.swift; sourceTree = "<group>"; };
-		A20000010000000000000010 /* ArtworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailView.swift; sourceTree = "<group>"; };
-		A20000010000000000000011 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A30000010000000000000001 /* ArtBloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtBloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -543,6 +543,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArtBloom/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ArtBloom;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ArtBloom needs permission to save your creations to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ArtBloom needs access to your photos to import images for drawing and style transformation.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "ArtBloom uses your device identifier to measure ad performance and improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -552,7 +555,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.artbloom.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glowpeach.mindSpark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -573,6 +576,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArtBloom/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ArtBloom;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ArtBloom needs permission to save your creations to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ArtBloom needs access to your photos to import images for drawing and style transformation.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "ArtBloom uses your device identifier to measure ad performance and improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -582,7 +588,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.artbloom.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glowpeach.mindSpark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
