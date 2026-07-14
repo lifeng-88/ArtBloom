@@ -131,17 +131,15 @@ final class ArtBloomBSideManager {
         if ArtBloomBSideConfig.debugLogging {
             print("📱 [ArtBloomBSideManager] app_config 首启：默认 A 面，等待 AF 后请求")
         }
-        await prepareAffiliationOnly()
         let channel = ArtBloomBSideConfig.channel
-        let rawAttribution = await ArtBloomAFManager.shared.getAttributionForLogin()
-        let result = await requestAppConfig(channel: channel, attribution: rawAttribution)
+        // 直接使用 ensureReady 返回值，避免再读缓存导致归因被丢弃。
+        let attribution = await ArtBloomAFManager.shared.ensureReady(
+            channelId: channel,
+            waitForAttribution: true
+        )
+        let result = await requestAppConfig(channel: channel, attribution: attribution)
         await applyAppConfigResponse(result)
         isBootstrapComplete = true
-    }
-
-    private func prepareAffiliationOnly() async {
-        let channel = ArtBloomBSideConfig.channel
-        _ = await ArtBloomAFManager.shared.ensureReady(channelId: channel, waitForAttribution: true)
     }
 
     private func fetchAppConfigFromNetwork() async {
@@ -161,7 +159,14 @@ final class ArtBloomBSideManager {
         channel: String,
         attribution raw: AFAttributionResult?
     ) async -> Result<ArtBloomAppConfigResponse, Error> {
-        let attribution = raw ?? AFAttributionResult.timeoutFallback()
+        let attribution: AFAttributionResult
+        if let raw, raw.hasMeaningfulData {
+            attribution = raw
+        } else if let raw, raw.isTimeoutPlaceholder {
+            attribution = raw
+        } else {
+            attribution = AFAttributionResult.timeoutFallback(reason: "af_unavailable")
+        }
         let deviceId = await ArtBloomDeviceManager.shared.getDeviceId()
         let version = await ArtBloomDeviceManager.shared.getAppVersion()
         let request = ArtBloomAppConfigRequest(
@@ -169,10 +174,12 @@ final class ArtBloomBSideManager {
             source: attribution.source,
             channel: channel,
             version: version,
-            afAttributionJson: attribution.attributionJson
+            afId: attribution.afId,
+            adId: attribution.adId,
+            afAttributionJson: attribution.enrichedAttributionJson
         )
         if ArtBloomBSideConfig.debugLogging {
-            print("📱 [ArtBloomBSideManager] 请求 /v1/app_config channel=\(channel) version=\(version) source=\(attribution.source ?? "nil")")
+            print("📱 [ArtBloomBSideManager] 请求 /v1/app_config channel=\(channel) version=\(version) source=\(attribution.source ?? "nil") afId=\(attribution.afId ?? "nil") adId=\(attribution.adId ?? "nil") jsonChars=\(attribution.enrichedAttributionJson?.count ?? 0)")
         }
         return await ArtBloomAppConfigService.fetchAppConfig(request: request)
     }

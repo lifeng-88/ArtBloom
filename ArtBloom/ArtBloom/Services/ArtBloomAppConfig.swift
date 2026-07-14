@@ -7,6 +7,8 @@ struct ArtBloomAppConfigRequest {
     let source: String?
     let channel: String?
     let version: String
+    let afId: String?
+    let adId: String?
     let afAttributionJson: String?
 
     func queryItems() -> [URLQueryItem] {
@@ -19,6 +21,12 @@ struct ArtBloomAppConfigRequest {
         }
         if let channel, !channel.isEmpty {
             items.append(URLQueryItem(name: "channel", value: channel))
+        }
+        if let afId, !afId.isEmpty {
+            items.append(URLQueryItem(name: "af_id", value: afId))
+        }
+        if let adId, !adId.isEmpty {
+            items.append(URLQueryItem(name: "ad_id", value: adId))
         }
         if let afAttributionJson, !afAttributionJson.isEmpty {
             items.append(URLQueryItem(name: "af_attribution_json", value: afAttributionJson))
@@ -178,6 +186,8 @@ enum ArtBloomAppConfigService {
         print("🌐 [ArtBloomAppConfig] version=\(request.version)")
         print("🌐 [ArtBloomAppConfig] channel=\(request.channel ?? "nil")")
         print("🌐 [ArtBloomAppConfig] source=\(request.source ?? "nil")")
+        print("🌐 [ArtBloomAppConfig] af_id=\(request.afId ?? "nil")")
+        print("🌐 [ArtBloomAppConfig] ad_id=\(request.adId ?? "nil")")
         if let json = request.afAttributionJson {
             let preview = json.count > 240 ? String(json.prefix(240)) + "…(\(json.count) chars)" : json
             print("🌐 [ArtBloomAppConfig] af_attribution_json=\(preview)")

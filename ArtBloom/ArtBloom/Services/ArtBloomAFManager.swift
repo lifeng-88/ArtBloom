@@ -26,10 +26,33 @@ struct AFAttributionResult {
     var source: String?
     var attributionJson: String?
 
-    static func timeoutFallback() -> AFAttributionResult {
-        let timeoutJson = (try? JSONSerialization.data(withJSONObject: ["timeout": true]))
+    static func timeoutFallback(reason: String = "timeout") -> AFAttributionResult {
+        let timeoutJson = (try? JSONSerialization.data(withJSONObject: [
+            "timeout": true,
+            "reason": reason
+        ]))
             .flatMap { String(data: $0, encoding: .utf8) }
         return AFAttributionResult(afId: nil, adId: nil, source: nil, attributionJson: timeoutJson)
+    }
+
+    var isTimeoutPlaceholder: Bool {
+        guard let attributionJson,
+              let data = attributionJson.data(using: .utf8),
+              let object = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              (object["timeout"] as? Bool) == true else {
+            return false
+        }
+        return afId?.trimmedNonEmpty == nil
+            && adId?.trimmedNonEmpty == nil
+            && source?.trimmedNonEmpty == nil
+    }
+
+    var hasMeaningfulData: Bool {
+        if isTimeoutPlaceholder { return false }
+        return afId?.trimmedNonEmpty != nil
+            || adId?.trimmedNonEmpty != nil
+            || source?.trimmedNonEmpty != nil
+            || attributionJson?.trimmedNonEmpty != nil
     }
 
     var loginParameters: [String: Any] {
@@ -37,10 +60,30 @@ struct AFAttributionResult {
         if let source = source?.trimmedNonEmpty { params["source"] = source }
         if let afId = afId?.trimmedNonEmpty { params["afId"] = afId }
         if let adId = adId?.trimmedNonEmpty { params["adId"] = adId }
-        if let attributionJson = attributionJson?.trimmedNonEmpty {
+        if let attributionJson = enrichedAttributionJson?.trimmedNonEmpty {
             params["afAttributionJson"] = attributionJson
         }
         return params
+    }
+
+    /// 将 afId / adId 并入 conversion JSON，供 app_config 与 H5 回传。
+    var enrichedAttributionJson: String? {
+        var object: [String: Any] = [:]
+        if let attributionJson,
+           let data = attributionJson.data(using: .utf8),
+           let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            object = parsed
+        } else if let attributionJson = attributionJson?.trimmedNonEmpty {
+            return attributionJson
+        }
+        if let afId = afId?.trimmedNonEmpty { object["af_id"] = afId }
+        if let adId = adId?.trimmedNonEmpty { object["ad_id"] = adId }
+        guard !object.isEmpty,
+              let data = try? JSONSerialization.data(withJSONObject: object),
+              let json = String(data: data, encoding: .utf8) else {
+            return attributionJson
+        }
+        return json
     }
 }
 
@@ -77,6 +120,9 @@ final class ArtBloomAFManager {
         }
         #endif
         guard await configureAndStart(channelId: effectiveChannel) else {
+            if ArtBloomBSideConfig.debugLogging {
+                print("❌ [AF] ensureReady 失败：缺少 appleAppID/devKey，归因无法采集与回传 channel=\(effectiveChannel)")
+            }
             return nil
         }
         if waitForAttribution {
@@ -99,13 +145,16 @@ final class ArtBloomAFManager {
     }
 
     func prepareLoginAttribution(channelId: String?) async -> [String: Any] {
-        if let cached = getAttributionForLoginCached(), hasMeaningfulAttribution(cached) {
+        if let cached = getAttributionForLoginCached(), cached.hasMeaningfulData {
             return cached.loginParameters
         }
-        if let rawAttribution = await ensureReady(channelId: channelId, waitForAttribution: true) {
+        if let rawAttribution = await ensureReady(channelId: channelId, waitForAttribution: true),
+           rawAttribution.hasMeaningfulData {
             return rawAttribution.loginParameters
         }
-        return AFAttributionResult.timeoutFallback().loginParameters
+        let configured = await configureAndStart(channelId: effectiveChannel(channelId: channelId))
+        let reason = configured ? "timeout" : "af_not_configured"
+        return AFAttributionResult.timeoutFallback(reason: reason).loginParameters
     }
 
     func logEvent(
@@ -169,14 +218,28 @@ final class ArtBloomAFManager {
         if let afId = afId?.trimmedNonEmpty { defaults.set(afId, forKey: nativeAFAfIDKey) }
         if let adId = adId?.trimmedNonEmpty { defaults.set(adId, forKey: nativeAFAdIDKey) }
         if let source = source?.trimmedNonEmpty { defaults.set(source, forKey: nativeAFSourceKey) }
-        if let attributionJson = attributionJson?.trimmedNonEmpty {
+        if let attributionJson = result.enrichedAttributionJson?.trimmedNonEmpty {
             defaults.set(attributionJson, forKey: nativeAFAttributionJSONKey)
         }
-        defaults.set(true, forKey: nativeAFHasObtainedAttributionKey)
-        if let continuation = attributionContinuation {
-            attributionContinuation = nil
-            continuation.resume(returning: result)
+        // 仅在拿到有效归因时永久标记，失败/超时可下次重试。
+        if result.hasMeaningfulData {
+            defaults.set(true, forKey: nativeAFHasObtainedAttributionKey)
         }
+        resumeAttributionWait(with: result)
+    }
+
+    /// conversion 失败或等待超时：释放等待方，但不永久标记，下次可重试。
+    func handleAttributionUnavailable(reason: String) {
+        if ArtBloomBSideConfig.debugLogging {
+            print("⚠️ [AF] attribution unavailable (\(reason))，可下次重试")
+        }
+        resumeAttributionWait(with: getAttributionForLoginCached())
+    }
+
+    private func resumeAttributionWait(with result: AFAttributionResult?) {
+        guard let continuation = attributionContinuation else { return }
+        attributionContinuation = nil
+        continuation.resume(returning: result)
     }
 
     private static func normalizedEventValues(_ values: [String: Any]?) -> [String: Any] {
@@ -209,8 +272,12 @@ final class ArtBloomAFManager {
     }
 
     private func waitForAttributionOrTimeout() async -> AFAttributionResult? {
+        // 旧版本失败路径可能留下“已获取”但缓存为空；允许重试。
         if defaults.bool(forKey: nativeAFHasObtainedAttributionKey) {
-            return getAttributionForLoginCached()
+            if let cached = getAttributionForLoginCached(), cached.hasMeaningfulData {
+                return cached
+            }
+            defaults.set(false, forKey: nativeAFHasObtainedAttributionKey)
         }
 
         return await withCheckedContinuation { continuation in
@@ -223,10 +290,7 @@ final class ArtBloomAFManager {
     }
 
     private func timeoutAttribution() {
-        guard let continuation = attributionContinuation else { return }
-        attributionContinuation = nil
-        defaults.set(true, forKey: nativeAFHasObtainedAttributionKey)
-        continuation.resume(returning: getAttributionForLoginCached())
+        handleAttributionUnavailable(reason: "timeout_\(Int(nativeAFAttributionTimeoutSeconds))s")
     }
 
     private func getAttributionForLoginCached() -> AFAttributionResult? {
@@ -239,13 +303,6 @@ final class ArtBloomAFManager {
             return AFAttributionResult(afId: afId, adId: adId, source: source, attributionJson: json)
         }
         return nil
-    }
-
-    private func hasMeaningfulAttribution(_ result: AFAttributionResult) -> Bool {
-        result.afId?.trimmedNonEmpty != nil
-            || result.adId?.trimmedNonEmpty != nil
-            || result.source?.trimmedNonEmpty != nil
-            || result.attributionJson?.trimmedNonEmpty != nil
     }
 
     private func configureAndStart(channelId: String) async -> Bool {
@@ -392,7 +449,13 @@ private final class ArtBloomAFDelegateWrapper: NSObject, AppsFlyerLibDelegate {
     func onConversionDataSuccess(_ conversionInfo: [AnyHashable: Any]) {
         let afId = AppsFlyerLib.shared().getAppsFlyerUID()
         let adId = ArtBloomAFManager.advertisingIdentifierIfAuthorized()
-        let attributionJson = (try? JSONSerialization.data(withJSONObject: conversionInfo))
+        var payload: [String: Any] = [:]
+        for (key, value) in conversionInfo {
+            payload[String(describing: key)] = value
+        }
+        if !afId.isEmpty { payload["af_id"] = afId }
+        if let adId { payload["ad_id"] = adId }
+        let attributionJson = (try? JSONSerialization.data(withJSONObject: payload))
             .flatMap { String(data: $0, encoding: .utf8) }
         let source = conversionInfo["media_source"] as? String
         Task { @MainActor in
@@ -407,11 +470,8 @@ private final class ArtBloomAFDelegateWrapper: NSObject, AppsFlyerLibDelegate {
 
     func onConversionDataFail(_ error: Error) {
         Task { @MainActor in
-            ArtBloomAFManager.shared.setAttribution(
-                afId: nil,
-                adId: nil,
-                source: nil,
-                attributionJson: nil
+            ArtBloomAFManager.shared.handleAttributionUnavailable(
+                reason: error.localizedDescription
             )
         }
     }
