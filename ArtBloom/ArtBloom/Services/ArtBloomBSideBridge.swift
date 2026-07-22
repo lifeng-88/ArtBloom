@@ -179,6 +179,9 @@ final class ArtBloomBSideBridge: NSObject, WKScriptMessageHandler, WKNavigationD
             if let privacyURL = ArtBloomBSideConfig.privacyURL {
                 result["privacyURL"] = privacyURL.absoluteString
             }
+            if let supportURL = ArtBloomBSideConfig.supportURL {
+                result["supportURL"] = supportURL.absoluteString
+            }
             result["bridgeVersion"] = Self.bridgeVersion
             result["runtimeConfigURL"] = ArtBloomBSideConfig.runtimeConfigURL
             if let apiBaseURL = ArtBloomBSideConfig.effectiveAPIBaseURL {

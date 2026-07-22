@@ -61,6 +61,7 @@
 		A1000001000000000000003B /* ArtBloomBSidePaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000003B /* ArtBloomBSidePaymentController.swift */; };
 		A1000001000000000000003C /* ArtBloomBSidePeachGenBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */; };
 		A10000010000000000000040 /* ArtBloomIncomingURLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */; };
+		A10000010000000000000041 /* ArtBloomATTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000041 /* ArtBloomATTManager.swift */; };
 		AF0000030000000000000003 /* AppsFlyerLib-Static in Frameworks */ = {isa = PBXBuildFile; productRef = AF0000020000000000000002 /* AppsFlyerLib-Static */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		A2000001000000000000003D /* ArtBloomRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtBloomRelease.entitlements; sourceTree = "<group>"; };
 		A2000001000000000000003E /* ArtBloomBSidePeachGenBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomBSidePeachGenBootstrap.swift; sourceTree = "<group>"; };
 		A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomIncomingURLRouter.swift; sourceTree = "<group>"; };
+		A20000010000000000000041 /* ArtBloomATTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBloomATTManager.swift; sourceTree = "<group>"; };
 		A30000010000000000000001 /* ArtBloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtBloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -261,6 +263,7 @@
 				A20000010000000000000037 /* ArtBloomPaymentCallbackManager.swift */,
 				A20000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift */,
 				A20000010000000000000040 /* ArtBloomIncomingURLRouter.swift */,
+				A20000010000000000000041 /* ArtBloomATTManager.swift */,
 				A20000010000000000000039 /* ArtBloomPushManager.swift */,
 				A2000001000000000000003A /* ArtBloomPushNotificationDelegate.swift */,
 			);
@@ -402,6 +405,7 @@
 				A10000010000000000000037 /* ArtBloomPaymentCallbackManager.swift in Sources */,
 				A10000010000000000000038 /* ArtBloomPaymentRedirectReturnURL.swift in Sources */,
 				A10000010000000000000040 /* ArtBloomIncomingURLRouter.swift in Sources */,
+				A10000010000000000000041 /* ArtBloomATTManager.swift in Sources */,
 				A10000010000000000000039 /* ArtBloomPushManager.swift in Sources */,
 				A1000001000000000000003A /* ArtBloomPushNotificationDelegate.swift in Sources */,
 				A1000001000000000000003B /* ArtBloomBSidePaymentController.swift in Sources */,

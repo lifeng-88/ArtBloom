@@ -28,6 +28,8 @@ struct ArtBloomApp: App {
                 ArtBloomIncomingURLRouter.handleOpenURL(url)
             }
             .task {
+                // ATT 必须在任何 AF / 追踪采集之前弹出（且不依赖 AF 配置是否成功）。
+                await ArtBloomATTManager.requestAuthorizationIfNeeded()
                 await appStore.loadDeviceIdIfNeeded()
                 await bSideManager.bootstrapFromRemote()
             }

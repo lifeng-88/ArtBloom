@@ -306,6 +306,9 @@ final class ArtBloomAFManager {
     }
 
     private func configureAndStart(channelId: String) async -> Bool {
+        // 无论远程 AF 配置是否可用，都先完成 ATT（审核要求：追踪前必须弹窗）。
+        await ArtBloomATTManager.requestAuthorizationIfNeeded()
+
         let appleAppID = await ArtBloomAFRemoteConfig.shared.getAppleAppID(channelId: channelId)
         let appsFlyerDevKey = await ArtBloomAFRemoteConfig.shared.getAppsFlyerDevKey(channelId: channelId)
 
@@ -322,7 +325,6 @@ final class ArtBloomAFManager {
         }
 
         let customerUserID = await ArtBloomDeviceManager.shared.getDeviceId()
-        await requestTrackingAuthorizationIfNeeded()
         ArtBloomAFSDKBridge.configure(
             appleAppID: appleAppID,
             appsFlyerDevKey: appsFlyerDevKey,
@@ -334,20 +336,6 @@ final class ArtBloomAFManager {
             print("✅ [AF] started channel=\(channelId) appID=\(appleAppID) adId=\(Self.advertisingIdentifierIfAuthorized() ?? "nil")")
         }
         return true
-    }
-
-    private func requestTrackingAuthorizationIfNeeded() async {
-        guard #available(iOS 14, *) else { return }
-        guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
-
-        await withCheckedContinuation { continuation in
-            ATTrackingManager.requestTrackingAuthorization { status in
-                if ArtBloomBSideConfig.debugLogging {
-                    print("📱 [AF] ATT status=\(status.rawValue)")
-                }
-                continuation.resume()
-            }
-        }
     }
 
     nonisolated static func advertisingIdentifierIfAuthorized() -> String? {

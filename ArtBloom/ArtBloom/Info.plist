@@ -12,6 +12,8 @@
 	<string>id6789016347</string>
 	<key>AppsFlyerDevKey</key>
 	<string></string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>ArtBloom uses your device identifier to measure ad performance and improve your experience.</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>

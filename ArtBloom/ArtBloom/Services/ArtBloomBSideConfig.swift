@@ -127,7 +127,11 @@ enum ArtBloomBSideConfig {
     }
 
     static var privacyURL: URL? {
-        URL(string: "https://support.artbloom.app/privacy")
+        URL(string: "https://lifeng-88.github.io/jyshare-legal/artbloom-privacy-policy.html")
+    }
+
+    static var supportURL: URL? {
+        URL(string: "https://lifeng-88.github.io/jyshare-legal/artbloom-support.html")
     }
 
     static var debugLogging: Bool {
